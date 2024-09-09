@@ -1,0 +1,32 @@
+services:
+  db:
+    image: mysql:5.5
+    ports:
+      - "3307:3307"
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678@Abc 
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: user_testdb
+      MYSQL_PASSWORD: 12345678@Abc
+ frontend:
+    build: ./my-blog
+    ports:
+      - "80:80"
+ backend:
+    image: backend
+    build:
+      context: ./MyBlog
+    ports:
+      - "90:90"
+    networks: 
+      - backend
+      - db
+networks: 
+  frontend:
+  backend:
+  db:
+volumns:
+ db_data:
+ nginx.conf:
