@@ -10,11 +10,11 @@ services:
       MYSQL_DATABASE: testdb
       MYSQL_USER: user_testdb
       MYSQL_PASSWORD: 12345678@Abc
- frontend:
+  frontend:
     build: ./my-blog
     ports:
       - "80:80"
- backend:
+  backend:
     image: backend
     build:
       context: ./MyBlog
