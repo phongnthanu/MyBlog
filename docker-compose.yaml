@@ -27,6 +27,5 @@ networks:
   frontend:
   backend:
   db:
-volumns:
- db_data:
- nginx.conf:
+volumes:
+  db_data:
