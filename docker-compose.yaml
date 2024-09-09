@@ -7,7 +7,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - /home/data/mysql:/var/lib/mysql
+      - db_mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: 12345678@Abc 
       MYSQL_DATABASE: testdb
@@ -31,4 +31,4 @@ networks:
   backend:
   db:
 volumes:
-  '/home/data/mysql':
+  db_mysql:
