@@ -14,9 +14,13 @@ services:
   #     MYSQL_USER: user_testdb
   #     MYSQL_PASSWORD: 12345678@Abc
   frontend:
-    build: ./my-blog
+    image: frontend
+    build: 
+      context: ./my-blog
     ports:
       - "80:80"
+    networks: 
+      - backend
   backend:
     image: backend
     build:
@@ -24,8 +28,7 @@ services:
     ports:
       - "90:90"
     networks: 
-      - backend
-      - db
+      - frontend
 networks: 
   frontend:
   backend:
