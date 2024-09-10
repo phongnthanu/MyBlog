@@ -1,18 +1,6 @@
 version: '3.1'
 
 services:
-  # db:
-  #   image: mysql:8.0
-  #   restart: always
-  #   ports:
-  #     - "3306:3306"
-  #   volumes:
-  #     - db_mysql:/var/lib/mysql
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: 12345678@Abc 
-  #     MYSQL_DATABASE: testdb
-  #     MYSQL_USER: user_testdb
-  #     MYSQL_PASSWORD: 12345678@Abc
   frontend:
     image: frontend
     build: 
@@ -20,7 +8,8 @@ services:
     ports:
       - "80:80"
     networks: 
-      - my-networks
+      - my_network
+
   backend:
     image: backend
     build:
@@ -28,9 +17,7 @@ services:
     ports:
       - "90:90"
     networks: 
-      - my-networks
+      - my_network
+
 networks: 
-  my-networks:
-  # db:
-# volumes:
-#   db_mysql:
+  my_network:
