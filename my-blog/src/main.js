@@ -10,11 +10,11 @@ import '@/assets/css/themify-icons.css'
 
 Vue.config.productionTip = false
 
-const backendHost = process.env.BACKEND_HOST_BASE
+const backendHost = `http://${process.env.VUE_APP_BACKEND_HOST_BASE}`
 
 const variables = {
-  API_URL: `http://${backendHost}/api/`,
-  IMAGES_URL: `http://${backendHost}/images/`
+  API_URL: `${backendHost}/api/`,
+  IMAGES_URL: `${backendHost}/images/`
 };
 
 Vue.prototype.$variables = variables;
