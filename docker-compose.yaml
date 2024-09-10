@@ -15,7 +15,7 @@ services:
     build:
       context: ./MyBlog
     ports:
-      - "90:90"
+      - "8080:8080"
     networks: 
       - my_network
 
