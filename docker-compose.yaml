@@ -5,6 +5,7 @@ services:
     image: frontend
     build: 
       context: ./my-blog
+    restart: always
     ports:
       - "80:80"
     networks: 
@@ -14,8 +15,11 @@ services:
     image: backend
     build:
       context: ./MyBlog
+    restart: always
     ports:
       - "8080:8080"
+    environment:
+      ASPNET_CORE_ENVIRONMENT:Production
     networks: 
       - my_network
 
