@@ -20,7 +20,7 @@ services:
     ports:
       - "80:80"
     networks: 
-      - myblog_backend
+      - my-networks
   backend:
     image: backend
     build:
@@ -28,10 +28,9 @@ services:
     ports:
       - "90:90"
     networks: 
-      - myblog_frontend
+      - my-networks
 networks: 
-  myblog_frontend:
-  myblog_backend:
+  my-networks:
   # db:
 # volumes:
 #   db_mysql:
