@@ -10,7 +10,7 @@ import '@/assets/css/themify-icons.css'
 
 Vue.config.productionTip = false
 
-const backendHost = `http://${process.env.VUE_APP_BACKEND_HOST_BASE}`
+const backendHost = `${process.env.VUE_APP_BACKEND_HOST_BASE}`
 
 const variables = {
   API_URL: `${backendHost}/api/`,
