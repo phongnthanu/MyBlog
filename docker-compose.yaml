@@ -7,6 +7,8 @@ services:
       context: ./my-blog
     env_file:
       - ./my-blog/.env.production
+    environment:
+     - BACKEND_HOST_BASE=${BACKEND_HOST_BASE}
     restart: always
     ports:
       - "80:80"
