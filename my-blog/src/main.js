@@ -11,8 +11,8 @@ import '@/assets/css/themify-icons.css'
 Vue.config.productionTip = false
 
 const variables = {
-  API_URL: 'http://backend:8080/api/',
-  IMAGES_URL: 'http://backend:8080/images/'
+  API_URL: 'http://54.179.251.168:8080/api/',
+  IMAGES_URL: 'http://54.179.251.168:8080/images/'
 };
 
 Vue.prototype.$variables = variables;
