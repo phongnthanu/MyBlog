@@ -6,7 +6,7 @@ services:
     build: 
       context: ./my-blog
     env_file:
-      - /my-blog/.env.production
+      - ./my-blog/.env.production
     restart: always
     ports:
       - "80:80"
