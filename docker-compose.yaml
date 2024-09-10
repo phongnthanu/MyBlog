@@ -5,6 +5,8 @@ services:
     image: frontend
     build: 
       context: ./my-blog
+    env_file:
+      - .env.production
     restart: always
     ports:
       - "80:80"
