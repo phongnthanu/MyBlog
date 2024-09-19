@@ -17,4 +17,94 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Images\02cd9b7b-b21c-452d-a8d5-cdd669bbf6ce.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\11998fb3-aa76-4d21-9d24-87ee5da81769.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\13a6d014-4db0-11ef-adeb-5811224b97e6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\16d2ecc9-fba2-48c3-80cb-b0f42ee1238c.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\1a252920-6179-4379-868f-c88674e75b15.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\1b5d4182-929b-42dd-9275-f0889e889c41.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\1ef0ea50-4ce3-453d-8e06-f079cd99e17b.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\3731a06b-cdf3-42fc-b73a-4791afa639be.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\384d3392-c256-4f03-bba6-00bc13aabde7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\39839426-7664-4d41-9845-ef85c320f801.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\41ae65b3-8ee2-4c0a-9c22-ec6594ce9331.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\5180a0cb-4757-4685-ae8c-a533243b39e5.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\5a0b3726-a2ef-43fc-8b9d-6cff5d6e6f3f.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\708c3b47-62a0-4198-ae2d-a1a88f1e5178.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\7508ce0d-a82a-4393-8363-91353aa74d15.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\7cbfc11c-c09e-4a4b-9aad-bf761b148e32.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\85544bf0-e5d7-4a7b-9c01-7ff40d9943e0.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\90bcab9d-f179-40cf-b236-27bb08c6b0f8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\9b7a024a-7052-4ee9-8120-62e05ed843fb.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\a2831a2c-e192-42fc-8975-5ef5a3c81279.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\bf6559b9-7f9c-4ad5-85ff-b33e9fcc3dcc.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\d4e52ab7-0a87-47f6-944c-77b0b25d6d75.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\d926e257-2dcd-4b18-a25b-241a7ac04af8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\da173f03-c8fc-4793-a397-9006e12ada07.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\dea9e539-ae77-4ff0-8cad-79a89f15fac2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\e319cd09-89e6-4d84-b3d2-39f93ba65c34.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\f4f2f3ac-80b8-4094-9bf6-b59457e19435.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\f8624293-339b-4277-b5ba-35c1c21b543f.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Uploads\f9649f72-2a06-4265-bfda-2508f9ec1b67.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
