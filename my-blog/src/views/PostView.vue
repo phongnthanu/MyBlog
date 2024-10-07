@@ -4,7 +4,7 @@
     <header class="page-header page-header-mini">
         <h1 class="title">{{ data.title }}</h1>
         <ol class="breadcrumb pb-0">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="/">Connectopia</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ data.title }}</li>
         </ol>
     </header>
@@ -18,7 +18,7 @@
                         <h3 class="card-title mb-4">{{ data.title }}</h3>
                         <div class="blog-media mb-4">
                             <img :src="imagePath + data.banner" alt="" class="w-100">
-                            <a href="#" class="badge badge-primary">#Salupt</a> 
+                            <a href="#" class="badge badge-primary">#Lắng nghe</a> 
                         </div>
                         <p><b>{{ data.summary }}</b></p>  
                         <small class="small text-muted">
@@ -29,7 +29,7 @@
                             <a href="#" class="text-muted">32 Comments</a>
                         </small>
                     </div>
-                    <div class="card-body border-top" v-html="data.content">
+                    <div class="card-body border-top" ref="postContent" v-html="data.content">
                     </div>
                     
                     <div class="card-footer">
@@ -82,7 +82,7 @@
                             <div class="card-header p-0">                                   
                                 <div class="blog-media">
                                     <img :src="imagePath + post.banner" alt="" class="w-100 related-post-banner">
-                                    <a href="#" class="badge badge-primary">#Placeat</a>        
+                                    <a href="#" class="badge badge-primary">#Giao tiếp</a>        
                                 </div>  
                             </div>
                             <div class="card-body px-0">
@@ -101,17 +101,17 @@
             </div>
             <!-- Sidebar -->
             <div class="page-sidebar">
-                <h6 class=" ">Tags</h6>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#iusto</a>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#quibusdam</a>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#officia</a>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#animi</a>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#mollitia</a>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#quod</a>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#ipsa at</a>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#dolor</a>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#incidunt</a>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#possimus</a>
+                <h6 class=" ">Thẻ</h6>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#GiaoTiếpHiệuQuả</a>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#LắngNghe</a>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#ThuyếtPhục</a>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#TựTin</a>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#ĐắcNhânTâm</a>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#GiaoTiếpTrongCôngViệc</a>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#ỨngXử</a>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#Communication</a>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#ChiaSẻ</a>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#GiaoTiếpQuaTinNhắn</a>
     
                 <div class="ad-card d-flex text-center align-items-center justify-content-center mt-4">
                     <span href="#" class="font-weight-bold">ADS</span>
@@ -181,6 +181,29 @@ export default {
       .then(res => {
         if (res && res.data) {
             me.data = res.data;
+            me.afterGetPost();
+        }
+      });
+    },
+
+    afterGetPost() {
+      const me = this;
+      me.$nextTick(() => {
+        const boxTitles = me.$refs.postContent.querySelectorAll('.box-title');
+        if (boxTitles && boxTitles.length > 0) {
+          for (let i = 0; i < boxTitles.length; i++) {
+            boxTitles[i].addEventListener('click', function(event) {
+              me.toggleContent(event.target);
+            });
+          }
+        }
+        const formQuestions = me.$refs.postContent.querySelectorAll('.form-question');
+        if (formQuestions && formQuestions.length > 0) {
+          for (let i = 0; i < formQuestions.length; i++) {
+            formQuestions[i].addEventListener("submit", function(event) {
+              event.preventDefault();
+            });
+          }
         }
       });
     },
@@ -244,12 +267,34 @@ export default {
       });
 
       return roots;
+    },
+
+    toggleContent(element) {
+      var box = element.closest('.box');
+      if (box) {
+        var icon = box.querySelector('i');
+        var content = box.querySelector(".box-content");
+
+        // Kiểm tra nếu nội dung đã mở rộng hay chưa
+        if (box.classList.contains('expanded')) {
+          icon.classList.remove('ti-angle-up');
+          icon.classList.add('ti-angle-down');
+          content.style.display = 'none';
+        } else {
+          icon.classList.remove('ti-angle-down');
+          icon.classList.add('ti-angle-up');
+          content.style.display = 'block';
+        }
+
+        // Thay đổi trạng thái expanded
+        box.classList.toggle('expanded');
+      }
     }
   }
 }
 </script>
 <style scoped>
-    .related-post-banner {
-        height: 170px;
-    }
+  .related-post-banner {
+      height: 170px;
+  }
 </style>

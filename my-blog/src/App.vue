@@ -1,21 +1,5 @@
 <template>
   <div id="app">
-    <!-- page First Navigation -->
-    <nav class="navbar navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="@/assets/images/logo.svg" alt="">
-            </a>
-            <div class="socials">
-                <a href="javascript:void(0)"><i class="ti-facebook"></i></a>
-                <a href="javascript:void(0)"><i class="ti-twitter"></i></a>
-                <a href="javascript:void(0)"><i class="ti-pinterest-alt"></i></a>
-                <a href="javascript:void(0)"><i class="ti-instagram"></i></a>
-                <a href="javascript:void(0)"><i class="ti-youtube"></i></a>
-            </div>
-        </div>
-    </nav>
-    <!-- End Of First Navigation -->
 
     <!-- Page Second Navigation -->
     <nav class="navbar custom-navbar navbar-expand-md navbar-light bg-primary sticky-top">
@@ -24,9 +8,10 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">                     
+                <router-link to="/" class="nav-logo"><img src="@/assets/images/logo.png" alt="" width="35"> <span class="blog-name">Connectopia</span></router-link>
+                <ul class="navbar-nav">
                     <li class="nav-item">
-                        <router-link to="/" class="nav-link"><i class="ti-home"></i></router-link>
+                        <router-link to="/home" class="nav-link"><i class="ti-home"></i></router-link>
                     </li>
                     <li class="nav-item">
                       <router-link to="/list-post" class="nav-link">Bài viết</router-link>
@@ -75,7 +60,7 @@
     <!-- Instagram Infor -->
     <div class="instagram-wrapper mt-5">
         <div class="ig-id">
-            <a href="javascript:void(0)">Follow @joe_mitchell On Instagram</a>
+            <a href="javascript:void(0)">Follow @suri_nguyen On Instagram</a>
         </div>
         <a href="javascript:void(0)" class="insta-item">
             <img src="@/assets/images/insta-1.jpg" alt="" class="w-100">
@@ -151,7 +136,7 @@
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-md-3 text-center text-md-left mb-3 mb-md-0">
-                    <img src="@/assets/images/logo.svg" alt="" class="logo">
+                    <img src="@/assets/images/logo.png" alt="" class="logo">
                 </div>
                 <div class="col-md-9 text-center text-md-right">
                     <div class="socials">
@@ -163,7 +148,7 @@
                     </div>
                 </div>  
             </div>
-            <p class="border-top mb-0 mt-4 pt-3 small">&copy; {{ new Date().getFullYear() }}, JoeBlog Created By <a href="https://www.devcrud.com" class="text-muted font-weight-bold" target="_blank">DevCrud.</a>  All rights reserved </p> 
+            <p class="border-top mb-0 mt-4 pt-3 small">&copy; {{ new Date().getFullYear() }}, Connectopia Created By <a href="https://www.linkedin.com/in/phong-ngo-487852320" class="text-muted font-weight-bold" target="_blank">Phong Ngo.</a>  All rights reserved </p> 
         </div>      
     </footer>
     <!-- End of Page Footer -->
@@ -219,6 +204,14 @@
 </script>
 
 <style scoped>
+    .nav-logo {
+        padding-right: 0.8rem;
+        .blog-name {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
     .navbar-user {
         display: flex;
         align-items: center;

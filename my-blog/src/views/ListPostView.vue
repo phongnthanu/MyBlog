@@ -12,7 +12,7 @@
                         <div class="card-header p-0">                                   
                             <div class="blog-media">
                                 <img :src="imagePath + post.banner" alt="" class="w-100">
-                                <a href="#" class="badge badge-primary">#Placeat</a>        
+                                <a href="#" class="badge badge-primary">#Giao tiếp</a>        
                             </div>  
                         </div>
                         <div class="card-body px-0">
@@ -29,7 +29,7 @@
                         </div>                  
                     </div>
                 </div>
-                <button class="btn btn-primary btn-block my-4">Load More Posts</button>
+                <button class="btn btn-primary btn-block my-4">Tải thêm bài viết</button>
             </div>
 
             <!-- Sidebar -->
@@ -46,7 +46,7 @@
                 <p>{{ aboutMeContent }}</p>
                 
 
-                <h6 class="sidebar-title mt-5 mb-4">Nhận thư báo</h6>
+                <h6 class="sidebar-title mt-5 mb-4">Nhận thông báo</h6>
                 <form action="">
                     <div class="subscribe-wrapper">
                         <input type="email" class="form-control" placeholder="Địa chỉ email">
@@ -54,17 +54,17 @@
                     </div>
                 </form>
 
-                <h6 class="sidebar-title mt-5 mb-4">Tags</h6>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#iusto</a>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#quibusdam</a>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#officia</a>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#animi</a>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#mollitia</a>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#quod</a>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#ipsa at</a>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#dolor</a>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#incidunt</a>
-                <a href="javascript:void(0)" class="badge badge-primary m-1">#possimus</a>
+                <h6 class="sidebar-title mt-5 mb-4">Thẻ</h6>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#GiaoTiếpHiệuQuả</a>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#LắngNghe</a>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#ThuyếtPhục</a>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#TựTin</a>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#ĐắcNhânTâm</a>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#GiaoTiếpTrongCôngViệc</a>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#ỨngXử</a>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#Communication</a>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#ChiaSẻ</a>
+                <a href="javascript:void(0)" class="badge badge-primary m-1">#GiaoTiếpQuaTinNhắn</a>
 
                 <h6 class="sidebar-title mt-5 mb-4">Instagram</h6>
                 <div class="row px-3">
@@ -101,9 +101,9 @@
                 </div>  
 
                 <figure class="figure mt-5">
-                    <a href="single-post.html" class="figure-img">
+                    <a href="" class="figure-img">
                         <img src="@/assets/images/img-4.jpg" alt="" class="w-100">
-                        <figcaption class="figcaption">Laboriosam</figcaption>
+                        <figcaption class="figcaption">Kết nối</figcaption>
                     </a>
                 </figure>
 
@@ -113,7 +113,7 @@
                     <div class="card-header p-0">                                   
                         <div class="blog-media">
                             <img :src="imagePath + topPopularPost.banner" alt="" class="w-100">
-                            <a href="#" class="badge badge-primary">#Lorem</a>      
+                            <a href="#" class="badge badge-primary">#Tự tin</a>      
                         </div>  
                     </div>
                     <div class="card-body px-0">

@@ -3587,7 +3587,7 @@ input[type="button"].btn-block {
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
-  color: white;
+  color: #16181b;
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
@@ -11115,9 +11115,9 @@ hr {
   font-size: 0.9rem;
 }
 
-.breadcrumb .breadcrumb-item a {
+/* .breadcrumb .breadcrumb-item a {
   color: white;
-}
+} */
 
 .breadcrumb .breadcrumb-item.active {
   color: #6c757d;

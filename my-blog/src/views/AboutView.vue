@@ -2,10 +2,10 @@
   <div>
     <!-- Page Header -->
     <header class="page-header page-header-mini">
-        <h1 class="title">About</h1>
+        <h1 class="title">Giới thiệu</h1>
         <ol class="breadcrumb pb-0">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">About</li>
+            <li class="breadcrumb-item"><a href="/">Connectopia</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Giới thiệu</li>
         </ol>
     </header>
     <!-- End Of Page Header -->
