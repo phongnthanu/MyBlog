@@ -253,7 +253,7 @@
             <div class="detail-box">
               <div class="heading_container">
                 <h2>
-                  Nhu cầu học gia tiếp trên thế giới
+                  Nhu cầu học giao tiếp trên thế giới
                 </h2>
               </div>
               <div class="tab_container">
