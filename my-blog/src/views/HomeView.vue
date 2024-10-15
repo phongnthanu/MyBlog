@@ -6,10 +6,10 @@
             <h2 class="slogan">
                 CONNECTOPIA - CẢI THIỆN KỸ NĂNG GIAO TIẾP
             </h2>
-            <button class="btn btn-experience" @click="scrollDown">
-                <i class="ti-angle-double-down"></i>
-                Trải nghiệm ngay
-            </button>
+            <form class="search-wrapper col-md-7 col-sm-12" @submit.prevent="search">
+                <input type="text" class="form-control" placeholder="Tìm kiếm bài viết" v-model="keyword">
+                <button type="submit" class="btn btn-primary"><i class="ti-search"></i></button>
+            </form>
         </div>
     </header>
     <!-- end of page header -->
@@ -41,52 +41,58 @@
         <hr>
         <div class="page-container">
             <div class="page-content">
-                <div class="card">
-                    <div class="card-header text-center">
-                        <h5 class="card-title">{{ topPost.title }}</h5> 
-                        <small class="small text-muted">{{ new Date(topPost.modifiedDate).toLocaleDateString() }}
-                            <span class="px-2">-</span>
-                            <a href="#" class="text-muted">32 Comments</a>
-                        </small>
-                    </div>
-                    <div class="card-body">
-                        <div class="blog-media">
-                            <img :src="imagePath + topPost.banner" alt="" class="w-100">
-                            <a href="#" class="badge badge-primary">#Lắng nghe</a>     
-                        </div>  
-                        <p class="my-3">{{ topPost.summary }}</p>
-                    </div>
-                    
-                    <div class="card-footer d-flex justify-content-between align-items-center flex-basis-0">
-                        <button class="btn btn-primary circle-35 mr-4"><i class="ti-back-right"></i></button>
-                        <router-link :to="`/post/${topPost.id}`" class="btn btn-outline-dark btn-sm">Đọc thêm</router-link>
-                        <a href="#" class="text-dark small text-muted">By : Suri</a>
-                    </div>                  
-                </div>
-                <hr>
-                <div class="post-container">
-                    <div class="card text-center mb-5" v-for="post in posts" :key="post.id">
-                        <div class="card-header p-0">                                   
-                            <div class="blog-media">
-                                <img :src="imagePath + post.banner" alt="" class="w-100">
-                                <a href="#" class="badge badge-primary">#Giao tiếp</a>        
-                            </div>  
-                        </div>
-                        <div class="card-body px-0">
-                            <h5 class="card-title mb-2">{{ post.title }}</h5>    
-                            <small class="small text-muted">{{ new Date(post.modifiedDate).toLocaleDateString() }}
+                <h4 class="text-center" v-if="$route.query.search"> {{ allPost.length }} kết quả tìm kiếm cho "{{ $route.query.search }}"</h4>
+                <div v-if="allPost && allPost.length > 0">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <h5 class="card-title">{{ topPost.title }}</h5> 
+                            <small class="small text-muted">{{ new Date(topPost.modifiedDate).toLocaleDateString() }}
                                 <span class="px-2">-</span>
-                                <a href="#" class="text-muted">34 Comments</a>
+                                <a href="#" class="text-muted">32 bình luận</a>
                             </small>
-                            <p class="my-2">{{ post.summary }}</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="blog-media">
+                                <img :src="imagePath + topPost.banner" alt="" class="w-100">
+                                <a href="#" class="badge badge-primary">#Lắng nghe</a>     
+                            </div>  
+                            <p class="my-3">{{ topPost.summary }}</p>
                         </div>
                         
-                        <div class="card-footer p-0 text-center">
-                            <router-link :to="`/post/${post.id}`" class="btn btn-outline-dark btn-sm">Đọc thêm</router-link>
+                        <div class="card-footer d-flex justify-content-between align-items-center flex-basis-0">
+                            <button class="btn btn-primary circle-35 mr-4"><i class="ti-back-right"></i></button>
+                            <router-link :to="`/post/${topPost.id}`" class="btn btn-outline-dark btn-sm">Đọc thêm</router-link>
+                            <a href="#" class="text-dark small text-muted">Bởi : Suri</a>
                         </div>                  
                     </div>
+                    <hr>
+                    <div class="post-container">
+                        <div class="card text-center mb-5" v-for="post in posts" :key="post.id">
+                            <div class="card-header p-0">                                   
+                                <div class="blog-media">
+                                    <img :src="imagePath + post.banner" alt="" class="w-100">
+                                    <a href="#" class="badge badge-primary">#Giao tiếp</a>        
+                                </div>  
+                            </div>
+                            <div class="card-body px-0">
+                                <h5 class="card-title mb-2">{{ post.title }}</h5>    
+                                <small class="small text-muted">{{ new Date(post.modifiedDate).toLocaleDateString() }}
+                                    <span class="px-2">-</span>
+                                    <a href="#" class="text-muted">34 bình luận</a>
+                                </small>
+                                <p class="my-2">{{ post.summary }}</p>
+                            </div>
+                            
+                            <div class="card-footer p-0 text-center">
+                                <router-link :to="`/post/${post.id}`" class="btn btn-outline-dark btn-sm">Đọc thêm</router-link>
+                            </div>                  
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block my-4">Tải thêm bài viết</button>
                 </div>
-                <button class="btn btn-primary btn-block my-4">Tải thêm bài viết</button>
+                <div v-else>
+                    <h5 class="text-center" v-if="!$route.query.search">Chưa có bài viết</h5>
+                </div>
             </div>
 
             <!-- Sidebar -->
@@ -204,28 +210,23 @@
 export default {
   data() {
     const me = this;
-    let posts = [{
-        title: 'Giới thiệu về chứng chỉ PMP',
-        summary: 'Chứng chỉ PMP (Project Management Professional) là một trong những chứng chỉ quản lý dự án danh tiếng và được công nhận trên toàn cầu, được cấp bởi PMI (Project Management Institute). Chứng chỉ này xác nhận kiến thức và năng lực của các nhà quản lý dự án.',
-        modifiedDate: new Date('2024-07-01')
-    }];
-    let popularPosts = [{
-        title: 'Giới thiệu về chứng chỉ PMP',
-        summary: 'Chứng chỉ PMP (Project Management Professional) là một trong những chứng chỉ quản lý dự án danh tiếng và được công nhận trên toàn cầu, được cấp bởi PMI (Project Management Institute). Chứng chỉ này xác nhận kiến thức và năng lực của các nhà quản lý dự án.',
-        modifiedDate: new Date('2024-07-01')
-    }];
     return {
-      posts: posts,
-      topPost: posts[0],
+      allPost: [],
+      posts: [],
+      topPost: null,
       imagePath: me.$variables.IMAGES_URL,
-      popularPosts: popularPosts,
-      topPopularPost: popularPosts[0],
-      aboutMeContent: null
+      popularPosts: [],
+      topPopularPost: null,
+      aboutMeContent: null,
+      keyword: null
     };
   },
   created() {
     const me = this;
-    me.getPost();
+    if (me.$route.query && me.$route.query.search) {
+        me.keyword = me.$route.query.search;
+    }
+    me.getPost(me.keyword);
     me.getAboutMeContent();
     me.getPopularPosts();
   },
@@ -247,11 +248,19 @@ export default {
             behavior: 'smooth'
         });
     },
-    async getPost() {
+    async getPost(keyword) {
       const me = this;
-      me.$axios.get(me.$variables.API_URL + 'v1/posts')
+      let url = me.$variables.API_URL + 'v1/posts';
+      if (keyword) {
+        url += `?keyword=${keyword}`;
+      }
+      me.$axios.get(url)
       .then(res => {
+        me.allPost = [];
+        me.posts = [];
+        me.topPost = null;
         if (res && res.data && res.data.length > 0) {
+            me.allPost = res.data;
             let topPostIndex = 0;
             for (let i = 0; i < res.data.length; i++) {
                 if (res.data[i].isTop) {
@@ -260,8 +269,10 @@ export default {
                 }
             }
             let posts = [...res.data];
-            posts.splice(topPostIndex, 1);
-            me.posts = posts;
+            if (posts.length > 1) {
+                posts.splice(topPostIndex, 1);
+                me.posts = posts;
+            }
             me.topPost = res.data[topPostIndex];
         }
       });
@@ -289,6 +300,17 @@ export default {
         console.log(ex);
       }
     },
+
+    search() {
+        const me = this;
+        if (me.keyword != me.$route.query.search) {
+            me.$router.replace({
+                path: me.$route.path,
+                query: { search: me.keyword }
+            });
+        }
+        me.getPost(me.keyword);
+    }
   } 
 }
 </script>
@@ -313,6 +335,33 @@ export default {
                 color: white;
                 background-color: #FF6F61;
                 border-color: #FF6F61;
+            }
+
+            .search-wrapper {
+                position: relative;
+                margin-top: 10px;
+            }
+
+            .search-wrapper input {
+                border-radius: 0 40px 40px 0;
+                margin: auto;
+            }
+
+            .search-wrapper button {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                line-height: 56px;
+                font-weight: bold;
+                font-size: 22px;
+                position: absolute;
+                border: 0;
+                right: 0;
+                top: -6px;
+                border: 2px solid white !important;
+                padding: 0;
+                padding-bottom: 6px;
+                padding-left: 2px;
             }
         }
     }

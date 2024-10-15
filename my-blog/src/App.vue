@@ -11,10 +11,7 @@
                 <router-link to="/" class="nav-logo"><img src="@/assets/images/logo.png" alt="" width="35"> <span class="blog-name">Connectopia</span></router-link>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <router-link to="/home" class="nav-link"><i class="ti-home"></i></router-link>
-                    </li>
-                    <li class="nav-item">
-                      <router-link to="/list-post" class="nav-link">Bài viết</router-link>
+                      <router-link to="/home" class="nav-link">Bài viết</router-link>
                     </li>
                     <li class="nav-item">
                       <router-link to="/about" class="nav-link">Giới thiệu</router-link>
@@ -23,10 +20,6 @@
                       <router-link to="/documents" class="nav-link">Tài liệu</router-link>
                     </li>
                 </ul>
-                <form class="search-wrapper" @submit.prevent="search">
-                    <input type="text" class="form-control search-input" placeholder="Tìm kiếm" v-model="keyword">
-                    <button type="submit" class="btn btn-primary btn-search"><i class="ti-search"></i></button>
-                </form>
                 <div class="navbar-nav ml-auto">
                     <ul class="navbar-nav" v-if="!isAuthenticated">
                         <li class="nav-item">
@@ -60,7 +53,7 @@
     <!-- Instagram Infor -->
     <div class="instagram-wrapper mt-5">
         <div class="ig-id">
-            <a href="javascript:void(0)">Follow @suri_nguyen On Instagram</a>
+            <a href="javascript:void(0)">Theo dõi @suri_nguyen trên Instagram</a>
         </div>
         <a href="javascript:void(0)" class="insta-item">
             <img src="@/assets/images/insta-1.jpg" alt="" class="w-100">

@@ -22,11 +22,11 @@
                         </div>
                         <p><b>{{ data.summary }}</b></p>  
                         <small class="small text-muted">
-                            <a href="#" class="text-muted">BY Admin</a>
+                            <a href="#" class="text-muted">Bởi Suri</a>
                             <span class="px-2">·</span>
-                            <span>January 24 2019</span>
+                            <span>{{ new Date(data.modifiedDate).toLocaleDateString() }}</span>
                             <span class="px-2">·</span>
-                            <a href="#" class="text-muted">32 Comments</a>
+                            <a href="#" class="text-muted">{{ totalComment }} bình luận</a>
                         </small>
                     </div>
                     <div class="card-body border-top" ref="postContent" v-html="data.content">
@@ -92,7 +92,7 @@
                                 </h6>
                                 <small class="small text-muted">{{ new Date(post.modifiedDate).toLocaleDateString() }}
                                     <span class="px-2">-</span>
-                                    <a href="#" class="text-muted">34 Comments</a>
+                                    <a href="#" class="text-muted">34 bình luận</a>
                                 </small>
                             </div>                  
                         </div>
